@@ -1,0 +1,15 @@
+[project]
+name = "bank-marketing-automation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.128.0",
+    "jupyterlab>=4.5.1",
+    "pandas>=2.3.3",
+    "pydantic>=2.12.5",
+    "seaborn>=0.13.2",
+    "uvicorn>=0.40.0",
+    "xgboost>=3.1.2",
+]
