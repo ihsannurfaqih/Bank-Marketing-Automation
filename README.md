@@ -32,3 +32,32 @@ The data is related with direct marketing campaigns of a Portuguese banking inst
 
 
 ## Environment Setup
+
+
+## Exploratory Data Analysis
+
+### Data Distribution & Correlation
+
+### Target Distribution
+
+### Feature Selection
+For feature selection implemented 2 kind of selection. For numeric feature we implement variance threshold, and field with low variance will be drop, while for categoric features we implement chi-square, and feature with less importance will be drop
+
+1. Based on variance selection (threshold 0.9) we remove several features that are `previous, cons.price.idx`. With final numeric features are:
+    - age
+    - duration
+    - campaign
+    - emp.var.rate
+    - cons.conf.idx
+    - euribor3m
+    - nr.employe
+
+
+2. Based on chi-square feature selection we remove several features that are `loan, housing, month, and day_of_week`. With final categoric features are:
+    - contact
+    - education
+    - default
+    - poutcome
+    - job
+    - marital 
+
