@@ -1,4 +1,4 @@
-# Bank Marketing Automation (Capstone 1 ML Zoomcamp)
+# Bank Marketing Automation (Capstone ML Zoomcamp)
 
 ## Problem Statement
 
@@ -91,5 +91,7 @@ As the class is imbalance choosen **F1 Score** as main metrics of the model. Tra
 ![Random Forest](misc/rf_base_model.png "Random Forest")
 3. XGBoost Base Model  
 ![XGBoost](misc/xgb_base_model.png "XGBoost")
+
+For base model training XGBoost is outperform 2 others model, with F1 Score **0.584**. This model is the model we will choose to be proceed for hyperparameter tuning
 
 ### Hyperparameter Tuning
