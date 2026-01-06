@@ -32,13 +32,30 @@ The data is related with direct marketing campaigns of a Portuguese banking inst
 
 
 ## Environment Setup
+1. Install Anaconda and create new conda environment (can refer to miniconda or anaconda documentation)
+2. Conda install uv
+3. Run uv sync with conda activated
+
+For the script environment setup please refer to this with conda installed on your computer:
+```bash
+conda create -n bank-marketing-automation
+conda activate bank-marketing-automation
+conda install python=3.12
+pip install uv
+uv sync --locked
+```
 
 
 ## Exploratory Data Analysis
 
 ### Data Distribution & Correlation
+![Correlation Heatmap](misc/correlation_heatmap.png "Correlation Heatmap")
+As correlation checking we identified that duration of call and previous has highly correlated to y
 
 ### Target Distribution
+Data for this cases is highly imbalance dataset, with majority of the class is 0, means they do not subscribe to bank term deposit for whole dataset only 331 customers that subsribed (11.03%)
+
+![Imbalance Illustration](misc/imbalance_illustration.png "Imbalance Class")
 
 ### Feature Selection
 For feature selection implemented 2 kind of selection. For numeric feature we implement variance threshold, and field with low variance will be drop, while for categoric features we implement chi-square, and feature with less importance will be drop
