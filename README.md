@@ -78,3 +78,18 @@ For feature selection implemented 2 kind of selection. For numeric feature we im
     - job
     - marital 
 
+
+## Model Training
+
+### Base Model Training
+
+As the class is imbalance choosen **F1 Score** as main metrics of the model. Trained 3 models to find best base model and than we will proceed to hyperparameter tuning, here is the result of base model training
+
+1. Decision Tree Best Model  
+![Decision Tree](misc/dt_base_model.png "Decision Tree")
+2. Random Forest Base Model  
+![Random Forest](misc/rf_base_model.png "Random Forest")
+3. XGBoost Base Model  
+![XGBoost](misc/xgb_base_model.png "XGBoost")
+
+### Hyperparameter Tuning
