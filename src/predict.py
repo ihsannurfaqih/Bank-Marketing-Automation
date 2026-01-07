@@ -78,7 +78,7 @@ class PredictResponse(BaseModel):
 
 app = FastAPI(title="bank-marketing-automation")
 
-pipeline = joblib.load('../model/best_model.pkl')
+pipeline = joblib.load('./best_model.pkl')
 
 
 def predict_single(customer):
