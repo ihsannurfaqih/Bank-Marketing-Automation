@@ -115,7 +115,7 @@ Using hyperparameter tuning with parameter as below
         'classifier__reg_lambda': [1, 1.5, 3]
     }
 ```
-Found that best f1 score that we can get is 0.60. Hence we will go further with treshold adjustment. With treshold adjustment we found that optimum probability for customer to subscribe is 0.57 that will generate 0.625 at f1 score
+Found that best f1 score that we can get is 0.60. Hence we will go further with treshold adjustment. With treshold adjustment we found that optimum probability for customer to subscribe is 0.55 that will generate 0.635 at f1 score
 
 ![Probability Adjustment](misc/probability_adjusment.png "Probability Adjustment")
 
