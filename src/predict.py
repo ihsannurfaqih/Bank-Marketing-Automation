@@ -57,13 +57,13 @@ class poutcomeType(str, Enum):
 
 
 class Customer(BaseModel):
-    age: int = Field(..., ge=49)
-    duration: int = Field(..., ge=182)
-    campaign: int = Field(..., ge=5)
-    emp_var_rate: int = Field(..., ge=1.4)
-    cons_conf_idx: int = Field(..., ge=-47.1)
-    euribor3m: int = Field(..., ge=0.722)
-    nr_employed: int = Field(..., ge=5017.5)
+    age: int = Field(...)
+    duration: int = Field(...)
+    campaign: int = Field(...)
+    emp_var_rate: float = Field(...)
+    cons_conf_idx: float = Field(...)
+    euribor3m: float = Field(...)
+    nr_employed: float = Field(...)
     job: jobType = Field(..., description='Job Type')
     marital: maritalType = Field(..., description='Marital Status')
     education: educationType = Field(..., description='Education Level')
@@ -78,7 +78,7 @@ class PredictResponse(BaseModel):
 
 app = FastAPI(title="bank-marketing-automation")
 
-pipeline = joblib.load('../model/best_model.bin')
+pipeline = joblib.load('../model/best_model.pkl')
 
 
 def predict_single(customer):
