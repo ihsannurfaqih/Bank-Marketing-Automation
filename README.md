@@ -95,3 +95,40 @@ As the class is imbalance choosen **F1 Score** as main metrics of the model. Tra
 For base model training XGBoost is outperform 2 others model, with F1 Score **0.584**. This model is the model we will choose to be proceed for hyperparameter tuning
 
 ### Hyperparameter Tuning
+Using hyperparameter tuning with parameter as below
+```python
+    param_grid = {    
+        # Tree Structure
+        'classifier__max_depth': [3, 4, 5, 6],
+        'classifier__min_child_weight': [1, 3, 5, 10],
+        
+        # Learning
+        'classifier__learning_rate': [0.01, 0.05, 0.1],
+        'classifier__n_estimators': [100, 300, 500],
+        
+        # Stochastic
+        'classifier__subsample': [0.6, 0.8, 1.0],
+        'classifier__colsample_bytree': [0.6, 0.8, 1.0],
+        
+        # Regularization (Alpha=L1, Lambda=L2)
+        'classifier__reg_alpha': [0, 0.1, 1],
+        'classifier__reg_lambda': [1, 1.5, 3]
+    }
+```
+Found that best f1 score that we can get is 0.60. Hence we will go further with treshold adjustment. With treshold adjustment we found that optimum probability for customer to subscribe is 0.57 that will generate 0.625 at f1 score
+
+![Probability Adjustment](misc/probability_adjusment.png "Probability Adjustment")
+
+## Docker Deployment as Web Service (API)
+
+You can run the docker and test the script using this command below, with directory in main directory, this is to build docker images
+```bash
+docker build -t bank-marketing-automation:latest .
+```
+
+after that, you can run the images with this script
+```bash
+docker run -p 9696:9696 bank-marketing-automation:latest
+```
+
+You can test the API using notebook that available in `src/test_endpoint.ipynb`
